@@ -15,6 +15,28 @@ namespace WinNotePad_For_Latest_Windows
         public Form1()
         {
             InitializeComponent();
+
+            
+        }
+
+        private void 編集ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 終了ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }
