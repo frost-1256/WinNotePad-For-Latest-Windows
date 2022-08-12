@@ -38,5 +38,15 @@ namespace WinNotePad_For_Latest_Windows
         {
             
         }
+
+        private void バージョン情報ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("v0.0.1 Channel C", "バージョン情報");
+        }
+
+        private void gitHub情報ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/frost-1256/WinNotePad-For-Latest-Windows");
+        }
     }
 }
