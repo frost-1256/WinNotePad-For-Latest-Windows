@@ -37,10 +37,12 @@
             this.menuName = new System.Windows.Forms.ToolStripMenuItem();
             this.menuExit = new System.Windows.Forms.ToolStripMenuItem();
             this.menuEdit = new System.Windows.Forms.ToolStripMenuItem();
-            this.Textbox1 = new System.Windows.Forms.RichTextBox();
             this.ヘルプHToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.バージョン情報ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gitHub情報ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Textbox1 = new System.Windows.Forms.RichTextBox();
+            this.OpenDialog = new System.Windows.Forms.OpenFileDialog();
+            this.SaveDialog = new System.Windows.Forms.SaveFileDialog();
             this.MenuBar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -113,18 +115,6 @@
             this.menuEdit.Text = "編集(&E)";
             this.menuEdit.Click += new System.EventHandler(this.編集ToolStripMenuItem_Click);
             // 
-            // Textbox1
-            // 
-            this.Textbox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Textbox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Textbox1.Location = new System.Drawing.Point(0, 24);
-            this.Textbox1.Name = "Textbox1";
-            this.Textbox1.Size = new System.Drawing.Size(1067, 614);
-            this.Textbox1.TabIndex = 1;
-            this.Textbox1.Text = "";
-            this.Textbox1.WordWrap = false;
-            this.Textbox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
-            // 
             // ヘルプHToolStripMenuItem
             // 
             this.ヘルプHToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -147,6 +137,23 @@
             this.gitHub情報ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.gitHub情報ToolStripMenuItem.Text = "GitHub情報";
             this.gitHub情報ToolStripMenuItem.Click += new System.EventHandler(this.gitHub情報ToolStripMenuItem_Click);
+            // 
+            // Textbox1
+            // 
+            this.Textbox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Textbox1.Font = new System.Drawing.Font("Microsoft JhengHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Textbox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.Textbox1.Location = new System.Drawing.Point(0, 24);
+            this.Textbox1.Name = "Textbox1";
+            this.Textbox1.Size = new System.Drawing.Size(1067, 614);
+            this.Textbox1.TabIndex = 1;
+            this.Textbox1.Text = "";
+            this.Textbox1.WordWrap = false;
+            this.Textbox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
+            // 
+            // OpenDialog
+            // 
+            this.OpenDialog.FileName = "openFileDialog1";
             // 
             // Form1
             // 
@@ -183,6 +190,8 @@
         private System.Windows.Forms.ToolStripMenuItem ヘルプHToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem バージョン情報ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gitHub情報ToolStripMenuItem;
+        private System.Windows.Forms.OpenFileDialog OpenDialog;
+        private System.Windows.Forms.SaveFileDialog SaveDialog;
     }
 }
 
