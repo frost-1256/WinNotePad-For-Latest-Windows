@@ -59,7 +59,10 @@ namespace WinNotePad_For_Latest_Windows
         private void menuNew_Click(object sender, EventArgs e)
         {
             if (txtMain.Modified) {
-                var result = MessageBox.Show("Modified", "NotePad", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                var result = MessageBox.Show("Modified",
+                                             "NotePad",
+                                             MessageBoxButtons.YesNoCancel,
+                                             MessageBoxIcon.Question);
                 if (result == DialogResult.Cancel) {
                     //キャンセルの場合、処理を抜ける
                     return;
