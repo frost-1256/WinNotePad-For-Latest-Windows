@@ -40,7 +40,7 @@
             this.ヘルプHToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.バージョン情報ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gitHub情報ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.Textbox1 = new System.Windows.Forms.RichTextBox();
+            this.txtMain = new System.Windows.Forms.RichTextBox();
             this.OpenDialog = new System.Windows.Forms.OpenFileDialog();
             this.SaveDialog = new System.Windows.Forms.SaveFileDialog();
             this.MenuBar.SuspendLayout();
@@ -76,6 +76,7 @@
             this.menuNew.Name = "menuNew";
             this.menuNew.Size = new System.Drawing.Size(180, 22);
             this.menuNew.Text = "新規";
+            this.menuNew.Click += new System.EventHandler(this.menuNew_Click);
             // 
             // menuNewWindow
             // 
@@ -88,6 +89,7 @@
             this.menuOpen.Name = "menuOpen";
             this.menuOpen.Size = new System.Drawing.Size(180, 22);
             this.menuOpen.Text = "開く";
+            this.menuOpen.Click += new System.EventHandler(this.menuOpen_Click);
             // 
             // menuSave
             // 
@@ -138,18 +140,18 @@
             this.gitHub情報ToolStripMenuItem.Text = "GitHub情報";
             this.gitHub情報ToolStripMenuItem.Click += new System.EventHandler(this.gitHub情報ToolStripMenuItem_Click);
             // 
-            // Textbox1
+            // txtMain
             // 
-            this.Textbox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Textbox1.Font = new System.Drawing.Font("Microsoft JhengHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Textbox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Textbox1.Location = new System.Drawing.Point(0, 24);
-            this.Textbox1.Name = "Textbox1";
-            this.Textbox1.Size = new System.Drawing.Size(1067, 614);
-            this.Textbox1.TabIndex = 1;
-            this.Textbox1.Text = "";
-            this.Textbox1.WordWrap = false;
-            this.Textbox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
+            this.txtMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtMain.Font = new System.Drawing.Font("Microsoft JhengHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMain.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.txtMain.Location = new System.Drawing.Point(0, 24);
+            this.txtMain.Name = "txtMain";
+            this.txtMain.Size = new System.Drawing.Size(1067, 614);
+            this.txtMain.TabIndex = 1;
+            this.txtMain.Text = "";
+            this.txtMain.WordWrap = false;
+            this.txtMain.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // OpenDialog
             // 
@@ -160,7 +162,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 638);
-            this.Controls.Add(this.Textbox1);
+            this.Controls.Add(this.txtMain);
             this.Controls.Add(this.MenuBar);
             this.Font = new System.Drawing.Font("Meiryo UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.MainMenuStrip = this.MenuBar;
@@ -186,7 +188,7 @@
         private System.Windows.Forms.ToolStripMenuItem menuName;
         private System.Windows.Forms.ToolStripMenuItem menuExit;
         private System.Windows.Forms.ToolStripMenuItem menuEdit;
-        private System.Windows.Forms.RichTextBox Textbox1;
+        private System.Windows.Forms.RichTextBox txtMain;
         private System.Windows.Forms.ToolStripMenuItem ヘルプHToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem バージョン情報ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gitHub情報ToolStripMenuItem;

@@ -19,6 +19,7 @@ namespace WinNotePad_For_Latest_Windows
             InitializeComponent();
             /// <summary>
             /// ver 0.5.1
+            /// スパゲッティ・モンスター
             /// </summary>
 
         }
@@ -45,10 +46,7 @@ namespace WinNotePad_For_Latest_Windows
 
         private void バージョン情報ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.FileVersionInfo ver =
-            System.Diagnostics.FileVersionInfo.GetVersionInfo(
-            System.Reflection.Assembly.GetExecutingAssembly().Location);
-            MessageBox.Show(ver);
+            MessageBox.Show("v0.0.1.3", "Version Infomation");
             
         }
 
@@ -56,6 +54,29 @@ namespace WinNotePad_For_Latest_Windows
         {
             // このGitHubリポジトリを表示
             System.Diagnostics.Process.Start("https://github.com/frost-1256/WinNotePad-For-Latest-Windows");
+        }
+
+        private void menuNew_Click(object sender, EventArgs e)
+        {
+            if (txtMain.Modified) {
+                var result = MessageBox.Show("Modified", "NotePad", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                if (result == DialogResult.Cancel) {
+                    //キャンセルの場合、処理を抜ける
+                    return;
+                }
+
+                if (result == DialogResult.Yes){
+                    //Yesで、menuOpen_Clickイベントに移行する
+                    menuOpen_Click(sender, e);
+                }
+                txtMain.Clear();
+                txtMain.Modified = false;
+            }
+        }
+
+        private void menuOpen_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Clicked");
         }
     }
 }
