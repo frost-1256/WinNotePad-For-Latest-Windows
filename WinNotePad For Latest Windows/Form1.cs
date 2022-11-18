@@ -9,11 +9,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Reflection;
+using System.Security.Cryptography.X509Certificates;
 
 namespace WinNotePad_For_Latest_Windows
 {
     public partial class Form1 : Form
     {
+        public string Path { get; set; }
         public Form1()
         {
             InitializeComponent();
@@ -21,6 +23,8 @@ namespace WinNotePad_For_Latest_Windows
             /// ver 0.5.1
             /// スパゲッティ・モンスター
             /// </summary>
+            
+            
 
         }
 
@@ -68,18 +72,62 @@ namespace WinNotePad_For_Latest_Windows
                     return;
                 }
 
+                if (result == DialogResult.No)
+                {
+                    return;
+                }
+
                 if (result == DialogResult.Yes){
-                    //Yesで、menuOpen_Clickイベントに移行する
-                    menuOpen_Click(sender, e);
+                    //Yesで、menuSave_Clickイベントに移行する
+                    menuSave_Click(sender, e);
                 }
                 txtMain.Clear();
                 txtMain.Modified = false;
+                this.Path = null;
             }
         }
 
         private void menuOpen_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Clicked");
+            if (txtMain.Modified)
+            {
+                var result = MessageBox.Show("Modified",
+                                             "NotePad",
+                                             MessageBoxButtons.YesNoCancel,
+                                             MessageBoxIcon.Question);
+                if (result == DialogResult.Cancel)
+                {
+                    //キャンセルの場合、処理を抜ける
+                    return;
+                }
+
+                if (result == DialogResult.No)
+                {
+                    return;
+                }
+
+                if (result == DialogResult.Yes)
+                {
+                    //Yesで、menuSave_Clickイベントに移行する
+                    menuSave_Click(sender, e);
+                }
+            }
+           {
+                OpenDialog.FileName = "";
+                var result = OpenDialog.ShowDialog();
+                if (result == DialogResult.OK) {
+
+                    string path = OpenDialog.FileName;
+                    txtMain.LoadFile(Path, RichTextBoxStreamType.PlainText);
+                    txtMain .Modified = false;
+                    this.Path = path;
+                }
+            }
+        }
+
+        private void menuSave_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

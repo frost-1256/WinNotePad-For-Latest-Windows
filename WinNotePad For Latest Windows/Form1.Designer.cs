@@ -96,6 +96,7 @@
             this.menuSave.Name = "menuSave";
             this.menuSave.Size = new System.Drawing.Size(180, 22);
             this.menuSave.Text = "保存";
+            this.menuSave.Click += new System.EventHandler(this.menuSave_Click);
             // 
             // menuName
             // 
